@@ -1,0 +1,51 @@
+<!DOCTYPE >
+<html>
+  <head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="output.css" />
+  </head>
+  <body>
+    <input type="number" value="20" id="fontSize" />
+    <br />
+    <label>
+      Blue
+      <input type="checkbox" checked id="blue" />
+    </label>
+    <br />
+    <label>
+      Purple
+      <input type="checkbox" checked id="purple" />
+    </label>
+    <br />
+    <label>
+      Visible
+      <input type="checkbox" checked id="visible" />
+    </label>
+    <div id="root"></div>
+    <script type="module">
+      import { h, render } from 'https://unpkg.com/preact?module';
+      import Component from './output.js';
+      window.h = h;
+      const state = {
+        fontSize: '20px',
+        isBlue: false,
+        isPurple: true,
+        visible: true,
+      };
+      document.body.addEventListener('change', update);
+      function update() {
+        render(
+          h(Component, {
+            fontSize: `${document.all.fontSize.value}px`,
+            isBlue: document.all.blue.checked,
+            isPurple: document.all.purple.checked,
+            visible: document.all.visible.checked,
+          }),
+          document.all.root
+        );
+      }
+      update();
+    </script>
+  </body>
+</html>

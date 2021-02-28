@@ -1,0 +1,25 @@
+{
+  "name": "style9-ghost",
+  "version": "0.1.0",
+  "author": "Johan Holmerin",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:johanholmerin/style9-ghost.git"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/plugin-syntax-jsx": "^7.10.4",
+    "@babel/plugin-transform-react-jsx": "^7.12.17",
+    "prettier": "2.2.1",
+    "style9": "^0.7.1",
+    "terser": "^5.6.0"
+  },
+  "dependencies": {
+    "@babel/types": "^7.9.6",
+    "babel-template": "^6.26.0",
+    "murmurhash-js": "^1.0.0",
+    "postcss": "^8.2.6",
+    "postcss-js": "^3.0.3"
+  }
+}
