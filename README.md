@@ -1,11 +1,14 @@
 # style9-ghost
 
-**Experimental**
-
-Babel plugin for transforming JSX attribute string literal to atomic CSS
+Babel preset for transforming JSX attribute string literals to atomic CSS using
+[style9](https://github.com/johanholmerin/style9),
+[style9-jsx-prop](https://github.com/johanholmerin/style9-jsx-prop), and
+[css-to-js.macro](https://github.com/johanholmerin/css-to-js.macro).
 
 ```javascript
 // Input
+import { css } from 'css-to-js.macro';
+
 <div
   css={css`
     color: red;
@@ -41,9 +44,8 @@ Babel plugin for transforming JSX attribute string literal to atomic CSS
 ```javascript
 // babel config
 {
-  "plugins": [
-    "style9-ghost",
-    "style9"
+  "presets": [
+    "style9-ghost"
   ]
 }
 ```
@@ -51,5 +53,5 @@ Babel plugin for transforming JSX attribute string literal to atomic CSS
 ## Installation
 
 ```sh
-yarn add -D git+https://github.com/johanholmerin/style9-ghost#semver:^0.1.0 style9
+yarn add -D git+https://github.com/johanholmerin/style9-ghost#semver:^0.2.0
 ```

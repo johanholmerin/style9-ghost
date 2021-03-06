@@ -1,13 +1,13 @@
 const fs = require('fs');
 const babel = require('@babel/core');
 const path = require('path');
-const plugin = require('../index.js');
-const style9Plugin = require('style9/babel');
+const preset = require('../index');
 const style9processCSS = require('style9/src/process-css');
 const prettier = require('prettier');
 const { minify } = require('terser');
 
 const output = babel.transformFileSync(path.resolve(__dirname, './input.js'), {
+  presets: [preset],
   plugins: [
     [
       '@babel/plugin-transform-react-jsx',
@@ -15,8 +15,6 @@ const output = babel.transformFileSync(path.resolve(__dirname, './input.js'), {
         pragma: 'h',
       },
     ],
-    plugin,
-    style9Plugin,
   ],
 });
 minify(output.code).then(({ code }) => {

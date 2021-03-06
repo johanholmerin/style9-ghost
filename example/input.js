@@ -1,3 +1,5 @@
+import { css } from 'css-to-js.macro';
+
 export default function Component(props) {
   return (
     <div
